@@ -43,12 +43,24 @@ export class App extends Component {
     return (
           <div>
             <Button 
-              maxNum={maxNumber}
-              minNum={minNumber} 
-              actions={[this.decrementCount, 
-                        this.resetCount, 
-                        this.incrementCount]} 
+              title="-" 
+              disabled={count === 0 || count === maxNumber}
+              onClick={count > minNumber ? this.decrementCount : null}
                       />
+              <Button
+                title="+"
+                disabled={count === maxNumber} 
+                onClick={this.incrementCount}
+                      />
+          
+ 
+              {count === maxNumber && (
+                <Button
+                  title="Reset"
+                  onClick={this.resetCount}
+                  />
+                )}
+
             <Message
               message={message}
               />

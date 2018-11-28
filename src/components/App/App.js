@@ -42,6 +42,10 @@ export class App extends Component {
 
     return (
           <div>
+            <Counter
+              count={count}
+              />
+
             <Button 
               title="-" 
               disabled={count === 0 || count === maxNumber}
@@ -63,10 +67,6 @@ export class App extends Component {
 
             <Message
               message={message}
-              />
-
-            <Counter
-              counter={count}
               />
           </div>
 
